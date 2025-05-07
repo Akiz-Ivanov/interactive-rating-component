@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('/fonts/Overpass-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    ascent-override: 92%;
+    descent-override: 24%;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('/fonts/Overpass-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    ascent-override: 90%;
+    descent-override: 24%;
+}
+
+:root {
+    /* Colors */
+    --color-primary-500: hsl(25, 97%, 53%);
+
+    --color-white: hsl(0, 100%, 100%);
+    --color-grey-500-values: 217, 12%, 63%;
+    --color-grey-900: hsl(213, 19%, 18%);
+    --color-grey-950: hsl(216, 12%, 8%);
+
+    /* Typography */
+    --font-body-size: 15px;
+    --font-family-base: 'Overpass', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+}
+
+@theme {
+    --color-grey-950: var(--color-grey-950);
+    --color-grey-900: var(--color-grey-900);
+    --color-primary-500: var(--color-primary-500);
+    --color-white: var(--color-white);
+
+    --color-grey-500: hsl(var(--color-grey-500-values));
+
+    --color-grey-light: hsla(var(--color-grey-500-values),0.15);
+    
+    --font-weight-regular: var(--font-weight-regular);
+    --font-weight-bold: var(--font-weight-bold);
+
+    --font-overpass: var(--font-family-base);
+    --text-body: var(--font-body-size);
+
+    --breakpoint-xs: 30rem;
+}
+
+@layer base {
+    html {
+        font-family: var(--font-family-base), Arial, Helvetica, sans-serif;
+        font-size: var(--font-body-size);
+        font-weight: var(--font-weight-regular);
+    }
+
+    body {
+        background-color: var(--color-grey-950);
+        color: var(--color-white);
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .motion-safe\:transition-none {
+        transition: none !important;
+    }
+}
+
