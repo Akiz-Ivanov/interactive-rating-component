@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
+import tyIllustration from "../assets/images/illustration-thank-you.svg";
 
 export default function ThankYouCard({ rating }) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const img = new Image()
-        img.src = '/src/assets/images/illustration-thank-you.svg'
+        img.src = tyIllustration
         img.onload = () => setIsLoading(false)
     }, [])
 
@@ -15,7 +16,7 @@ export default function ThankYouCard({ rating }) {
                 <div className="w-[162px] h-[108px] bg-grey-light rounded-md animate-pulse my-1 sm:my-4"></div>
             ) : (
                 <img
-                    src="/src/assets/images/illustration-thank-you.svg"
+                    src={tyIllustration}
                     alt=""
                     className="my-1 sm:my-4"
                 />

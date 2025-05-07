@@ -1,6 +1,7 @@
 import RatingButton from "./components/RatingButton";
 import { useState } from "react";
 import ThankYouCard from "./components/ThankYouCard";
+import starIcon from "./assets/images/icon-star.svg";
 
 function App() {
 
@@ -42,7 +43,7 @@ function App() {
                 w-[clamp(2.5rem,5vw,3.25rem)] h-[clamp(2.5rem,5vw,3.25rem)] 
                 flex justify-center items-center">
               <img
-                src="/src/assets/images/icon-star.svg"
+                src={starIcon}
                 alt="Star icon"
                 className="w-[clamp(0.875rem,1.75vw,1.125rem)] relative top-[0.5px]"
               />
